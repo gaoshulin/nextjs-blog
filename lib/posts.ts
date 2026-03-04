@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
 import { posts } from "@/lib/db/schema";
-import { eq, desc, or, ilike } from "drizzle-orm";
+import { eq, desc, ilike } from "drizzle-orm";
 
 export type { Post } from "@/lib/db/schema";
 
