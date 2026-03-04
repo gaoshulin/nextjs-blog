@@ -1,4 +1,4 @@
-import type { Post } from "@/lib/posts";
+import type { Post } from "@/lib/db/schema";
 import PostCard from "./PostCard";
 
 export default function PostList({ posts }: { posts: Post[] }) {

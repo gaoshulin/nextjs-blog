@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Post } from "@/lib/posts";
+import type { Post } from "@/lib/db/schema";
 
 function PostContent({ content }: { content: string }) {
   return (
@@ -70,9 +70,9 @@ export default function PostDetail({ post }: { post: Post }) {
       <div className="flex items-center gap-4 mt-4 text-sm text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
-            {post.author.avatar}
+            {post.authorAvatar}
           </div>
-          <span>{post.author.name}</span>
+          <span>{post.authorName}</span>
         </div>
         <time dateTime={post.date}>
           {new Date(post.date).toLocaleDateString("zh-CN", {

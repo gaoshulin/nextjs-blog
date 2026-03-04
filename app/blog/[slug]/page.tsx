@@ -1,11 +1,6 @@
-import { getPostBySlug, getPosts } from "@/lib/posts";
+import { getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import PostDetail from "@/component/ui/PostDetail";
-
-export async function generateStaticParams() {
-  const posts = getPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
 
 export default async function BlogPostPage({
   params,
@@ -13,7 +8,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
