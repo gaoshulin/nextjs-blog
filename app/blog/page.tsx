@@ -2,6 +2,7 @@ import { getPosts } from "@/lib/posts";
 import SearchInput from "@/component/ui/SearchInput";
 import BlogManager from "@/component/ui/BlogManager";
 import { Suspense } from "react";
+import styles from "./blog.module.css";
 
 export default async function BlogPage({
   searchParams,
@@ -12,7 +13,7 @@ export default async function BlogPage({
   const posts = await getPosts(q);
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-16">
+    <main className={`max-w-4xl mx-auto px-4 py-16 ${styles.blog}`}>
       <header className="mb-8">
         <h1 className="text-4xl font-bold dark:text-gray-100">Blog</h1>
         <p className="mt-2 text-gray-500 dark:text-gray-400">
